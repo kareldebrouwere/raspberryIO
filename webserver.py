@@ -1,5 +1,6 @@
 import cherrypy
 import os
+import motor
 
 HMTL= HTML = """<html>
           <head></head>
@@ -13,7 +14,7 @@ HMTL= HTML = """<html>
           </body>
         </html>"""
 
-class Motor(object):
+class MotorWebServer(object):
     def __init__(self):
         self.clockwise1 = """"<form method="get" action="clockwise1">
                             <button type="submit">Turn Clock Wise</button>
@@ -32,7 +33,11 @@ class Motor(object):
         pageHTML=HTML.format(clockwise1=self.clockwise1,clockwise2=self.clockwise2,anticlockwise=self.anticlockwise,anticlockwise2=self.anticlockwise2)
         return pageHTML
 
+    @cherrypy.expose
+    def clockwise1(self):
+        myMotor = motor.Motor()
+        myMotor.turnClockWise()
 
 if __name__ == "__main__":
     config = os.path.join(os.path.dirname(__file__),'cherrypy.conf')
-    cherrypy.quickstart(Motor(),config = config)
+    cherrypy.quickstart(MotorWebServer(),config = config)
