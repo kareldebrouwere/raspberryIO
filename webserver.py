@@ -27,10 +27,10 @@ class Motor(object):
         self.anticlockwise2 = """"<form method="get" action="clockwise2">
                                     <button type="submit">Turn anti Clock Fast</button>
                                     </form>"""
-        @cherrypy.expose
-        def index(self):
-            pageHTML=HTML.format(clockwise1=self.clockwise1,clockwise2=self.clockwise2,anticlockwise=self.antioclockwise,anticlockwise2=self.antioclockwise2)
-            return pageHTML
+    @cherrypy.expose
+    def index(self):
+        pageHTML=HTML.format(clockwise1=self.clockwise1,clockwise2=self.clockwise2,anticlockwise=self.antioclockwise,anticlockwise2=self.antioclockwise2)
+        return pageHTML
 
 
 if __name__ == "__main__":
