@@ -31,7 +31,7 @@ class MotorWebServer(object):
     @cherrypy.expose
     def index(self):
         pageHTML=HTML.format(clockwise1=self.clockwise1,clockwise2=self.clockwise2,anticlockwise=self.anticlockwise,anticlockwise2=self.anticlockwise2)
-        print pageHTML
+        print (pageHTML)
         return pageHTML
 
     @cherrypy.expose
