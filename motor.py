@@ -34,7 +34,7 @@ class Motor(object):
                [0,0,1,1],
                [0,0,0,1]]
 
-        self.StepCount = len(Seq)
+        self.StepCount = len(self.Seq)
         self.StepDir = 1 # Set to 1 or 2 for clockwise
                     # Set to -1 or -2 for anti-clockwise
  
