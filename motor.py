@@ -56,7 +56,7 @@ class Motor(Thread):
           for pin in range(0,4):
             xpin=self.StepPins[pin]# Get GPIO
             if self.Seq[self.StepCounter][pin]!=0:
-              print (" Enable GPIO %i" %(xpin))
+              #print (" Enable GPIO %i" %(xpin))
               GPIO.output(xpin, True)
             else:
               GPIO.output(xpin, False)
@@ -71,4 +71,4 @@ class Motor(Thread):
             self.StepCounter = self.StepCount+self.StepDir
 
           # Wait before moving on
-          time.sleep(self.WaitTime/50)
+          time.sleep(self.WaitTime)
