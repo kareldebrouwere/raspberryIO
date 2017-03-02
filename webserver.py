@@ -41,7 +41,7 @@ class MotorWebServer(object):
     def start(self):
         print("the clockwise1 method start")
         self.myMotor.run()
-        return self.index()
+        return """<html><head>RUNNING</head></html>"""
 
     @cherrypy.expose
     def stop(self):
