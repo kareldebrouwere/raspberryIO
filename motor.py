@@ -42,8 +42,10 @@ class Motor(object):
  
         # Initialise variables
         StepCounter = 0
+        print ("Motor has been created")
 
     def turnClockWise(self):
+        print ("starting the motor")
         while True:
 
           print (self.StepCounter)
