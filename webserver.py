@@ -36,6 +36,7 @@ class MotorWebServer(object):
 
     @cherrypy.expose
     def clockwise1(self):
+        print("the clockwise1 method start")
         myMotor = motor.Motor()
         myMotor.turnClockWise()
 
