@@ -16,7 +16,7 @@ HMTL= HTML = """<html>
 
 class MotorWebServer(object):
     def __init__(self):
-        self.clockwise1 = """<form method="get" action="clockwise1">
+        self.clockwise1HTML = """<form method="get" action="clockwise1">
                             <button type="submit">Turn Clock Wise</button>
                             </form>"""
         self.clockwise2 = """<form method="get" action="clockwise2">
@@ -30,9 +30,10 @@ class MotorWebServer(object):
                                     </form>"""
     @cherrypy.expose
     def index(self):
-        pageHTML=HTML.format(clockwise1=self.clockwise1,clockwise2=self.clockwise2,anticlockwise=self.anticlockwise,anticlockwise2=self.anticlockwise2)
-        print (pageHTML)
+        pageHTML=HTML.format(clockwise1=self.clockwise1HTML,clockwise2=self.clockwise2,anticlockwise=self.anticlockwise,anticlockwise2=self.anticlockwise2)
+        #print (pageHTML)
         return pageHTML
+
 
     @cherrypy.expose
     def clockwise1(self):
