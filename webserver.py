@@ -29,7 +29,7 @@ class Motor(object):
                                     </form>"""
     @cherrypy.expose
     def index(self):
-        pageHTML=HTML.format(clockwise1=self.clockwise1,clockwise2=self.clockwise2,anticlockwise=self.antioclockwise,anticlockwise2=self.antioclockwise2)
+        pageHTML=HTML.format(clockwise1=self.clockwise1,clockwise2=self.clockwise2,anticlockwise=self.anticlockwise,anticlockwise2=self.anticlockwise2)
         return pageHTML
 
 
