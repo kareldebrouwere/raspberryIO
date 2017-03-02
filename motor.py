@@ -3,9 +3,10 @@
 import sys
 import time
 import RPi.GPIO as GPIO
+from threading import Thread
 
 
-class Motor(object):
+class Motor(Thread):
 
     def __init__(self):
         # Use BCM GPIO references
@@ -44,7 +45,7 @@ class Motor(object):
         self.StepCounter = 0
         print ("Motor has been created")
 
-    def turnClockWise(self):
+    def run(self):
         print ("starting the motor")
         while True:
 
