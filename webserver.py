@@ -42,6 +42,7 @@ class MotorWebServer(object):
         self.myMotor.run()
         return self.index()
 
+    @cherrypy.expose
     def stop(self):
         self.myMotor.stop()
         return self.index()
