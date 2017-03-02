@@ -46,7 +46,7 @@ class MotorWebServer(object):
     @cherrypy.expose
     def stop(self):
         self.myMotor.runningStatus=False
-        return self.index()
+        return """<html><head>STOPPED</head></html>"""
 
 if __name__ == "__main__":
     config = os.path.join(os.path.dirname(__file__),'cherrypy.conf')
