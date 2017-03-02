@@ -44,10 +44,12 @@ class Motor(Thread):
         # Initialise variables
         self.StepCounter = 0
         print ("Motor has been created")
+        self.runningStatus = True
+
 
     def run(self):
         print ("starting the motor")
-        while True:
+        while self.runningStatus:
 
           print (self.StepCounter)
           print (self.Seq[self.StepCounter])
