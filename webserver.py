@@ -36,7 +36,6 @@ class MotorWebServer(object):
         print (pageHTML)
         return pageHTML
 
-
     @cherrypy.expose
     def start(self):
         print("the clockwise1 method start")
