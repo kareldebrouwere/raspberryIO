@@ -41,7 +41,7 @@ class Motor(object):
         self.WaitTime = 10/float(1000)
  
         # Initialise variables
-        StepCounter = 0
+        self.StepCounter = 0
         print ("Motor has been created")
 
     def turnClockWise(self):
