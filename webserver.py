@@ -19,7 +19,7 @@ class MotorWebServer(object):
         self.clockwise1HTML = """<form method="get" action="start">
                             <button type="submit">Turn Clock Wise</button>
                             </form>"""
-        self.clockwise2HTML = """<form method="get" action="start">
+        self.clockwise2HTML = """<form method="get" action="stop">
                             <button type="submit">Turn Clock Wise Fast</button>
                             </form>"""
         self.anticlockwiseHTML = """<form method="get" action="start">
@@ -38,8 +38,12 @@ class MotorWebServer(object):
     @cherrypy.expose
     def start(self):
         print("the clockwise1 method start")
-        myMotor = motor.Motor()
-        myMotor.run()
+        self.myMotor = motor.Motor()
+        self.myMotor.run()
+        return self.index()
+
+    def stop(self):
+        self.myMotor.stop()
         return self.index()
 
 if __name__ == "__main__":
