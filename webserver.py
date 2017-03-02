@@ -19,18 +19,18 @@ class MotorWebServer(object):
         self.clockwise1HTML = """<form method="get" action="clockwise1">
                             <button type="submit">Turn Clock Wise</button>
                             </form>"""
-        self.clockwise2 = """<form method="get" action="clockwise2">
+        self.clockwise2HTML = """<form method="get" action="clockwise2">
                             <button type="submit">Turn Clock Wise Fast</button>
                             </form>"""
-        self.anticlockwise = """<form method="get" action="anticlockwise1">
+        self.anticlockwiseHTML = """<form method="get" action="anticlockwise1">
                             <button type="submit">Turn anti Clock Wise</button>
                             </form>"""
-        self.anticlockwise2 = """<form method="get" action="clockwise2">
+        self.anticlockwise2HTML = """<form method="get" action="clockwise2">
                                     <button type="submit">Turn anti Clock Fast</button>
                                     </form>"""
     @cherrypy.expose
     def index(self):
-        pageHTML=HTML.format(clockwise1=self.clockwise1HTML,clockwise2=self.clockwise2,anticlockwise=self.anticlockwise,anticlockwise2=self.anticlockwise2)
+        pageHTML=HTML.format(clockwise1=self.clockwise1HTML,clockwise2=self.clockwise2HTML,anticlockwise=self.anticlockwiseHTML,anticlockwise2=self.anticlockwise2HTML)
         #print (pageHTML)
         return pageHTML
 
