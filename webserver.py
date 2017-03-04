@@ -14,6 +14,7 @@ class MotorWebServer(object):
     def __init__(self):
         self.stopHTML = """<form method="get" action="stop">
                             <button type="submit">Stop</button>
+                            <input type="text" name="speed">
                             </form>"""
         self.startHTML = """<form method="get" action="start">
                             <button type="submit">Turn anti Clock Wise</button>
