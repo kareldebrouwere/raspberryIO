@@ -22,8 +22,8 @@ class MotorWebServer(object):
                             <button type="submit">Stop</button>
                         </form>"""
         self.direction="""<form>
-                        <input type="radio" name="direction" value="Clockwise" checked><br>
-                        <input type="radio" name="direction" value="Anti Clockwise"><br>
+                        <input type="radio" name="direction" value="Clockwise" checked><Clockwise><br>
+                        <input type="radio" name="direction" value="Anti Clockwise"><Anti Clockwise<br>
                         </form>
                         """
         self.myMotor = motor.Motor()
