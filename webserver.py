@@ -22,7 +22,7 @@ class MotorWebServer(object):
                             <button type="submit">Stop</button>
                         </form>"""
         self.direction="""<form>
-                        <input type="radio" name="direction" value="clock" checked> Clockwise<br>
+                        <input type="radio" name="direction" value="clock"> Clockwise<br>
                         <input type="radio" name="direction" value="anticlock"> Anti Clockwise<br>
                         </form>
                         """
