@@ -53,7 +53,6 @@ class Motor(Thread):
         while self.runningStatus:
             logging.info("Running Status: +"+ str(self.runningStatus))
             logging.info("StepCounter: " + str(self.StepCounter))
-            logging("Sequence: "+ str(self.Seq[self.StepCounter]))
             for pin in range(0,4):
                 xpin=self.StepPins[pin]# Get GPIO
                 if self.Seq[self.StepCounter][pin]!=0:
