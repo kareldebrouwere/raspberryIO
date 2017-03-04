@@ -19,8 +19,7 @@ class MotorWebServer(object):
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
                             <button type="submit">Stop</button>
-                            <input type="text" name="speed">
-                            </form>"""
+                        </form>"""
         self.myMotor = motor.Motor()
 
     @cherrypy.expose
@@ -34,12 +33,12 @@ class MotorWebServer(object):
         print("the clockwise1 method start")
         self.myMotor.WaitTime = int(speed)/10000
         self.myMotor.run()
-        return """<html><head>RUNNING</head></html>"""
+        return self.index()
 
     @cherrypy.expose
     def stop(self):
         self.myMotor.runningStatus=False
-        return """<html><head>STOPPED</head></html>"""
+        return self.index()
 
 if __name__ == "__main__":
     config = os.path.join(os.path.dirname(__file__),'cherrypy.conf')
