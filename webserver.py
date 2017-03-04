@@ -1,6 +1,7 @@
 import cherrypy
 import os
 import motor
+import logging
 
 HMTL= HTML = """<html>
           <head></head>
@@ -23,10 +24,12 @@ class MotorWebServer(object):
                         </form>"""
         self.direction="""<form>
                         <input type="radio" name="direction" value="clock"> Clockwise<br>
-                        <input type="radio" name="direction" value="anticlock"> Anti Clockwise<br>
+                        <input type="radio" name="direction" value="anti clock"> Anti Clockwise<br>
                         </form>
                         """
         self.myMotor = motor.Motor()
+
+        logging.basicConfig(filename='webserver.log',level=logging.info)
 
     @cherrypy.expose
     def index(self):
@@ -36,6 +39,7 @@ class MotorWebServer(object):
 
     @cherrypy.expose
     def start(self,speed=10,direction="clock"):
+        logging.info("method start with speed="+str(speed)+ " and direction= "+str(direction))
         print("Direction: "+direction)
         if direction == "clock":
             self.myMotor.StepDir = 1
