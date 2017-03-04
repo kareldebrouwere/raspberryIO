@@ -35,7 +35,7 @@ class MotorWebServer(object):
         return pageHTML
 
     @cherrypy.expose
-    def start(self,speed=1):
+    def start(self,speed=10):
         self.myMotor.runningStatus=True
         self.myMotor.WaitTime = float(0.0001/int(speed))
         self.myMotor.run()
