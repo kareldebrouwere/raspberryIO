@@ -22,8 +22,8 @@ class MotorWebServer(object):
                             <button type="submit">Stop</button>
                         </form>"""
         self.direction="""<form>
-                        <input type="radio" name="direction" value="Clockwise" checked>Clockwise<br>
-                        <input type="radio" name="direction" value="Anti Clockwise">Anti Clockwise<br>
+                        <input type="radio" name="direction" value="clock" checked> Clockwise<br>
+                        <input type="radio" name="direction" value="anticlock"> Anti Clockwise<br>
                         </form>
                         """
         self.myMotor = motor.Motor()
@@ -35,7 +35,11 @@ class MotorWebServer(object):
         return pageHTML
 
     @cherrypy.expose
-    def start(self,speed=10):
+    def start(self,speed=10,direction="clock"):
+        if direction == "clock":
+            self.myMotor.StepDir = 1
+        elif direction == "anticlock":
+            self.myMotor.StepDir = -1
         self.myMotor.runningStatus=True
         try:
             self.myMotor.WaitTime = float(0.0001/int(speed))
