@@ -42,6 +42,7 @@ class MotorWebServer(object):
         if direction == "clock":
             self.myMotor.StepDir = 1
         elif direction == "anticlock":
+            logging.info("Setting direction to anticlock wise")
             self.myMotor.StepDir = -1
         self.myMotor.runningStatus=True
         try:
