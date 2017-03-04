@@ -8,7 +8,6 @@ HMTL= HTML = """<html>
           <body>
               {button1}
               {button2}
-              {direction}
           </body>
         </html>"""
 
