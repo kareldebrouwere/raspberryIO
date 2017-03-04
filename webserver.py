@@ -7,6 +7,7 @@ HMTL= HTML = """<html>
           <body>
               {button1}
               {button2}
+              {direction}
           </body>
         </html>"""
 
@@ -20,11 +21,16 @@ class MotorWebServer(object):
         self.stopHTML = """<form method="get" action="stop">
                             <button type="submit">Stop</button>
                         </form>"""
+        self.direction="""<form method="get">
+                        <input type="radio" name="direction" value="Clockwise" checked>
+                        <input type="radio" name="direction" value="Anti Clockwise">
+                        </form>
+                        """
         self.myMotor = motor.Motor()
 
     @cherrypy.expose
     def index(self):
-        pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML)
+        pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML,direction=self.direction)
         print (pageHTML)
         return pageHTML
 
