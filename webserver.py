@@ -36,6 +36,7 @@ class MotorWebServer(object):
 
     @cherrypy.expose
     def start(self,speed=10,direction="clock"):
+        print("Direction: "+direction)
         if direction == "clock":
             self.myMotor.StepDir = 1
         elif direction == "anticlock":
