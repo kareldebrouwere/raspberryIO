@@ -15,13 +15,14 @@ class MotorWebServer(object):
     def __init__(self):
 
         self.startHTML = """<form method="get" action="start">
-                            <button type="submit">Make it Turn</button>
-                            <input type="text" name="speed">
+
+                            Spped <input type="text" name="speed"><br>
                             <input type="radio" name="direction" value="clock"> Clockwise<br>
                             <input type="radio" name="direction" value="anti clock"> Anti Clockwise<br>
+                            <button type="submit">Make it Turn</button><br>
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
-                            <button type="submit">Stop</button>
+                            <button type="submit">Stop</button><br>
                         </form>"""
 
         self.myMotor = motor.Motor()
