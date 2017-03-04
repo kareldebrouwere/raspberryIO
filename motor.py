@@ -67,6 +67,6 @@ class Motor(Thread):
             if (self.StepCounter>=self.StepCount):
                 self.StepCounter = 0
             if (self.StepCounter<0):
-                self.StepCounter = self.StepCount+self.StepDi
+                self.StepCounter = self.StepCount+self.StepDir
             # Wait before moving on
             time.sleep(self.WaitTime)
