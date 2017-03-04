@@ -4,6 +4,7 @@ import sys
 import time
 import RPi.GPIO as GPIO
 from threading import Thread
+import logging
 
 
 class Motor(Thread):
@@ -50,9 +51,9 @@ class Motor(Thread):
     def run(self):
         print ("starting the motor")
         while self.runningStatus:
-            #print (self.runningStatus)
-            #print (self.StepCounter)
-            #print (self.Seq[self.StepCounter])
+            logging.info("Running Status: +"+ str(self.runningStatus))
+            logging.info("StepCounter: " + str(self.StepCounter))
+            logging("Sequence: "+ str(self.Seq[self.StepCounter]))
             for pin in range(0,4):
                 xpin=self.StepPins[pin]# Get GPIO
                 if self.Seq[self.StepCounter][pin]!=0:
@@ -61,7 +62,7 @@ class Motor(Thread):
                 else:
                     GPIO.output(xpin, False)
             self.StepCounter += self.StepDir
-            print("Step Counter: "+ str(self.StepCounter))
+            #print("Step Counter: "+ str(self.StepCounter))
             # If we reach the end of the sequence
             # start again
             if (self.StepCounter>=self.StepCount):
