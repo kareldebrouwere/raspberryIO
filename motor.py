@@ -39,7 +39,7 @@ class Motor(Thread):
         self.StepDir = 1 # Set to 1 or 2 for clockwise
                     # Set to -1 or -2 for anti-clockwise
  
-        self.WaitTime = 10/float(1000)
+        self.WaitTime = 0.00025 #guess around 1 rotation per second
  
         # Initialise variables
         self.StepCounter = 0
