@@ -30,8 +30,8 @@ class MotorWebServer(object):
 
     @cherrypy.expose
     def start(self,speed):
-        print("the clockwise1 method start")
-        self.myMotor.WaitTime = float(10000/int(speed))
+        self.myMotor.runningStatus=True
+        self.myMotor.WaitTime = float(000.1/int(speed))
         self.myMotor.run()
         return self.index()
 
