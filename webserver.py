@@ -5,10 +5,8 @@ import motor
 HMTL= HTML = """<html>
           <head></head>
           <body>
-            <form>
               {button1}
               {button2}
-            </form>
           </body>
         </html>"""
 
