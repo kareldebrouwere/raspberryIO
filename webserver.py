@@ -15,7 +15,7 @@ class MotorWebServer(object):
     def __init__(self):
 
         self.startHTML = """<form method="get" action="start">
-                            <button type="submit">Turn anti Clock Wise</button>
+                            <button type="submit">Make it Turn</button>
                             <input type="text" name="speed">
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
@@ -31,7 +31,7 @@ class MotorWebServer(object):
     @cherrypy.expose
     def index(self):
         pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML,direction=self.direction)
-        print (pageHTML)
+        #print (pageHTML)
         return pageHTML
 
     @cherrypy.expose
