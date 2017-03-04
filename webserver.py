@@ -39,9 +39,9 @@ class MotorWebServer(object):
     def start(self,speed=10,direction="clock"):
         logging.info("method start with speed="+str(speed)+ " and direction= "+str(direction))
         print("Direction: "+direction)
-        if direction == "clock":
+        if str(direction) == "clock":
             self.myMotor.StepDir = 1
-        elif direction == "anticlock":
+        elif str(direction) == "anticlock":
             logging.info("Setting direction to anticlock wise")
             self.myMotor.StepDir = -1
         self.myMotor.runningStatus=True
