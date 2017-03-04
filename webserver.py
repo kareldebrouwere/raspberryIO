@@ -18,22 +18,20 @@ class MotorWebServer(object):
         self.startHTML = """<form method="get" action="start">
                             <button type="submit">Make it Turn</button>
                             <input type="text" name="speed">
+                            <input type="radio" name="direction" value="clock"> Clockwise<br>
+                            <input type="radio" name="direction" value="anti clock"> Anti Clockwise<br>
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
                             <button type="submit">Stop</button>
                         </form>"""
-        self.direction="""<form>
-                        <input type="radio" name="direction" value="clock"> Clockwise<br>
-                        <input type="radio" name="direction" value="anti clock"> Anti Clockwise<br>
-                        </form>
-                        """
+
         self.myMotor = motor.Motor()
 
         logging.basicConfig(filename='webserver.log',level=logging.INFO)
 
     @cherrypy.expose
     def index(self):
-        pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML,direction=self.direction)
+        pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML)
         #print (pageHTML)
         return pageHTML
 
