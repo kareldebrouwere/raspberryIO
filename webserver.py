@@ -18,7 +18,7 @@ class MotorWebServer(object):
 
                             Spped <input type="text" name="speed"><br>
                             <input type="radio" name="direction" value="clock"> Clockwise<br>
-                            <input type="radio" name="direction" value="anti clock"> Anti Clockwise<br>
+                            <input type="radio" name="direction" value="anticlock"> Anti Clockwise<br>
                             <button type="submit">Make it Turn</button><br>
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
