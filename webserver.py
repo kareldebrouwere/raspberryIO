@@ -6,7 +6,7 @@ HMTL= HTML = """<html>
           <head></head>
           <body>
             <form>
-              {button11}
+              {button1}
               {button2}
             </form>
           </body>
