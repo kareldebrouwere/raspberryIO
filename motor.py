@@ -50,9 +50,9 @@ class Motor(Thread):
     def run(self):
         print ("starting the motor")
         while self.runningStatus:
-            print (self.runningStatus)
-            print (self.StepCounter)
-            print (self.Seq[self.StepCounter])
+            #print (self.runningStatus)
+            #print (self.StepCounter)
+            #print (self.Seq[self.StepCounter])
             for pin in range(0,4):
                 xpin=self.StepPins[pin]# Get GPIO
                 if self.Seq[self.StepCounter][pin]!=0:
