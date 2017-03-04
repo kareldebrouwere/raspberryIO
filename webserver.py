@@ -29,7 +29,7 @@ class MotorWebServer(object):
                         """
         self.myMotor = motor.Motor()
 
-        logging.basicConfig(filename='webserver.log',level=logging.info)
+        logging.basicConfig(filename='webserver.log',level=logging.INFO)
 
     @cherrypy.expose
     def index(self):
