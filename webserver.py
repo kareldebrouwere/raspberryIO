@@ -32,7 +32,7 @@ class MotorWebServer(object):
     @cherrypy.expose
     def start(self,speed):
         print("the clockwise1 method start")
-        self.myMotor.WaitTime = speed/10000
+        self.myMotor.WaitTime = int(speed)/10000
         self.myMotor.run()
         return """<html><head>RUNNING</head></html>"""
 
