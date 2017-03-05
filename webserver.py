@@ -64,6 +64,7 @@ class MotorWebServer(object):
     @cherrypy.expose
     def quarter(self):
         self.myMotor.quarterturn()
+        return self.index()
 
 if __name__ == "__main__":
     config = os.path.join(os.path.dirname(__file__),'cherrypy.conf')
