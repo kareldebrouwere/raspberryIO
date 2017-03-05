@@ -8,6 +8,7 @@ HMTL= HTML = """<html>
           <body>
               {button1}
               {button2}
+              {quarter}
           </body>
         </html>"""
 
@@ -24,6 +25,9 @@ class MotorWebServer(object):
         self.stopHTML = """<form method="get" action="stop">
                             <button type="submit">Stop</button><br>
                         </form>"""
+        self.quarter = """<form method="get" action="quarter">
+                            <button type="submit">Quarter</button><br>
+                        </form>"""
 
         self.myMotor = motor.Motor()
 
@@ -31,7 +35,7 @@ class MotorWebServer(object):
 
     @cherrypy.expose
     def index(self):
-        pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML)
+        pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML,quarter=self.quarter)
         #print (pageHTML)
         return pageHTML
 
@@ -56,6 +60,10 @@ class MotorWebServer(object):
     def stop(self):
         self.myMotor.runningStatus=False
         return self.index()
+
+    @cherrypy.expose
+    def quarter(self):
+        self.myMotor.quarterturn()
 
 if __name__ == "__main__":
     config = os.path.join(os.path.dirname(__file__),'cherrypy.conf')
