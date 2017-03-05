@@ -3,7 +3,7 @@ import os
 import motor
 import logging
 
-HMTL= HTML = """<html>
+HMTL= """<html>
           <head></head>
           <body>
               {button1}
