@@ -25,7 +25,7 @@ class MotorWebServer(object):
         self.stopHTML = """<form method="get" action="stop">
                             <button type="submit">Stop</button><br>
                         </form>"""
-        self.quarter = """<form method="get" action="quarter">
+        self.quarter = """<form method="get" action="kwart">
                             <button type="submit">Quarter</button><br>
                         </form>"""
 
@@ -62,7 +62,7 @@ class MotorWebServer(object):
         return self.index()
 
     @cherrypy.expose
-    def quarter(self):
+    def kwart(self):
         self.myMotor.quarterturn()
         return self.index()
 
