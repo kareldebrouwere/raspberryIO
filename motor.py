@@ -81,7 +81,7 @@ class Motor(Thread):
                     GPIO.output(xpin, True)
                 else:
                     GPIO.output(xpin, False)
-                logging.info("Sequence = "+self.Seq[self.StepCounter])
+                logging.info("Sequence = "+str(self.Seq[self.StepCounter]))
             self.StepCounter += self.StepDir
             #print("Step Counter: "+ str(self.StepCounter))
             # If we reach the end of the sequence
