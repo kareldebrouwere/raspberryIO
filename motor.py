@@ -73,7 +73,7 @@ class Motor(Thread):
 
     def quarterturn(self):
         logging.info("Quarter turn")
-        for i in range(16):
+        for i in range(64):
             for pin in range(0,4):
                 xpin=self.StepPins[pin]# Get GPIO
                 if self.Seq[self.StepCounter][pin]!=0:
