@@ -24,13 +24,13 @@ class MotorWebServer(object):
                             Speed <input type="text" name="speed"><br>
                             <input type="radio" name="direction" value="clock"> Clockwise<br>
                             <input type="radio" name="direction" value="anticlock"> Anti Clockwise<br>
-                            <button type="submit" value="Make it Turn"</button><br>
+                            <button type="submit" class="button" value="Make it Turn"</button><br>
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
                             <button type="submit" class="button" value="Stop"</button><br>
                         </form>"""
         self.quarter = """<form method="get" action="kwart">
-                            <button type="submit">Quarter</button><br>
+                            <button type="submit" class="button" value="Quarter"</button><br>
                         </form>"""
 
         self.myMotor = motor.Motor()
