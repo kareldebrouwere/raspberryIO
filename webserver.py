@@ -39,7 +39,7 @@ class MotorWebServer(object):
     def index(self):
         logging.info(HTML)
         pageHTML=HTML.format(button1=self.startHTML,button2=self.stopHTML,quarter=self.quarter)
-        #print (pageHTML)
+        print (pageHTML)
         return pageHTML
 
     @cherrypy.expose
