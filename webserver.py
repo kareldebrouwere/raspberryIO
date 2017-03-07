@@ -27,7 +27,7 @@ class MotorWebServer(object):
                             <button type="submit">Make it Turn</button><br>
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
-                            <button type="submit" class="button" value="Stop"</button><br>
+                            <button type="submit" class="button" text="Stop"</button><br>
                         </form>"""
         self.quarter = """<form method="get" action="kwart">
                             <button type="submit">Quarter</button><br>
