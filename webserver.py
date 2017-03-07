@@ -3,16 +3,18 @@ import os
 import motor
 import logging
 
-HTML= """<html>
-          <head>
-          <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        </head>
-          <body>
-              {button1}
-              {button2}
-              {quarter}
-          </body>
-        </html>"""
+HTML="""
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+{button1}
+{button2}
+{quarter}
+</body>
+</html>
+"""
 
 class MotorWebServer(object):
     def __init__(self):
