@@ -5,9 +5,7 @@ import logging
 
 HTML= """<html>
           <head>
-          <style>
-               <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        </style>
+          <link rel="stylesheet" type="text/css" href="stylesheet.css">
         </head>
           <body>
               {button1}
