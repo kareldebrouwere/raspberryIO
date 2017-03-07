@@ -22,8 +22,8 @@ class MotorWebServer(object):
         self.startHTML = """<form method="get" action="start">
 
                             Speed <input type="text" name="speed"><br>
-                            <input type="radio" name="direction" value="clock" Clockwise<br>
-                            <input type="radio" name="direction" value="anticlock" Anti Clockwise<br>
+                            <input type="radio" name="direction"> Clockwise<br>
+                            <input type="radio" name="direction">Anti Clockwise<br>
                             <button type="submit" class="button" value="Make it Turn"</button><br>
                             </form>"""
         self.stopHTML = """<form method="get" action="stop">
